@@ -1,0 +1,12 @@
+<!doctype>
+<html>
+<head>
+<meta charset="utf-8">
+<title>xss helloworld</title>
+</head>
+</body>
+<script>
+eval(window.location.hash.substr(1));
+</script>
+</body>
+</html>
