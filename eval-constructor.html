@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		var p = document.createElement('p');
+		p.innerHTML = "&#x3c;script&#x3e;(0)['constructor']['constructor']('alert(1)')();&#x3c;/script&#x3e;";
+		document.body.appendChild(
+			p
+		);
+	</script>
+</body>
+</html>

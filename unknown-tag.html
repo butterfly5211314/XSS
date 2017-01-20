@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<xss>abc</xss>
+	<span>abc</span>
+	<bgsound src="javascript:alert(1);" loop="infinite">
+
+    <isindex prompt="search from dreamdu"></isindex>
+	<meta http-equiv="refresh" content="0;url=javascript:alert(2);">
+
+	
+	<!-- <script>
+			
+		var re = /<([^>]+)>.*?<\/([^>]+)>/;
+		var input = '<<script>alert("xss")//</script>';
+	
+		console.log(re.exec(input));
+	</script> -->
+	<!-- <script>
+		var rComment = /.*?/;
+		var content = 'bbbaaaaa cccbbb';
+		console.log(rComment.exec(content));
+	</script> -->
+
+	<!--<a href="--><img src=x onerror=alert(1)//">test</a>
+	
+	<!--[if IE]><script>alert('ie')</script><![endif]-->
+	<!--[if IE 6]><script>alert('ie6')</script><![endif]-->
+	<!--[if lt IE 6]><script>alert('your browser<ie6')</script><![endif]-->
+	<!--[if gte IE 6]><script>alert('your browser>=ie6')</script><![endif]-->
+
+	<!--[if]><script>alert(5)</script> -->
+	<!--[if<img src=x onerror=alert(6)//]> -->
+
+	<title><a href="</title><img src=x onerror=alert(1)//">
+	<style><a href="</style><img src=x onerror=alert(1)//">
+</body>
+</html>
