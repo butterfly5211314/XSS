@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS注入示例</title>
+	
+</head>
+<body>
+<script>
+	window.name='alert("xss")';
+	location.href='http://blog.csdn.net/keepxp/article/details/52054388';
+
+	eval('name');
+</script>
+<a onmouseover="javascript:window.onerror=alert;throw 1">hover me</a>
+</body>
+</html>
